@@ -37,10 +37,10 @@ jobs:
             - name: Update metainfo
               run: pnpm generateMeta
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
             - name: Upload metainfo to release
               run: |
                   gh release upload "${{ steps.latest_tag.outputs.tag }}" dist/dev.vencord.Vesktop.metainfo.xml
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
