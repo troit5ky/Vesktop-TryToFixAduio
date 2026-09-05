@@ -4,7 +4,7 @@
         "type": "git",
         "url": "git+https://github.com/troit5ky/Vesktop-TryToFixAduio.git"
     },
-    "version": "1.6.7",
+    "version": "1.6.7-1",
     "private": true,
     "description": "Vesktop is a custom Discord desktop app",
     "keywords": [],
