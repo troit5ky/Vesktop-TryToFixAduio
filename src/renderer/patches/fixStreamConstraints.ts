@@ -2,16 +2,15 @@
  * Vesktop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2025 Vendicated and Vesktop contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * VoiceFix: Discord web ignores Voice & Video toggles and always sends
- * echoCancellation/noiseSuppression/autoGainControl + advanced:[{autoGainControl}]
- * Force-off regardless of MediaEngineStore - web equivalent of WEBRTC VoiceEngine.
  */
 
 import { Logger } from "@vencord/types/utils";
 
 const logger = new Logger("VesktopVoiceFix");
 
+//  VoiceFix: Discord web ignores Voice & Video toggles and always sends
+//  echoCancellation/noiseSuppression/autoGainControl + advanced:[{autoGainControl}]
+//  Force-off regardless of MediaEngineStore - web equivalent of WEBRTC VoiceEngine.
 function fixAudioTrackConstraints(constraint: MediaTrackConstraints) {
     (constraint as any).echoCancellation = false;
     (constraint as any).noiseSuppression = false;
